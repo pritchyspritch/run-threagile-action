@@ -6,12 +6,22 @@ inputs:
     description: 'Threat model input file'
     required: true
     default: 'threagile.yaml'
+  optional-args:
+    description: 'Optional arguments'
+    required: false
+    default: ''
+  output-dir:
+    description: 'Output directory for files'
+    required: false
+    default: 'threagile/output'
 #outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.model-file }}
+    - ${{ inputs.model-file }} 
+    - ${{ inputs.output-dir }}
+    - ${{ inputs.optional-args }}
 branding:
   icon: 'box'  
   color: 'blue'
