@@ -1,27 +1,24 @@
-name: 'Threagile'
-author: Threagile
+name: 'DfE-Threagile'
+author: pritchyspritch
 description: 'Threat model analysis via open-source toolkit Threagile'
 inputs:
-  model-file: # id of input variable
+  model_file: # id of input variable
     description: 'Threat model input file'
     required: false
     default: 'threagile.yaml'
-  optional-args:
+  optional_args:
     description: 'Optional arguments'
     required: false
     default: ''
-  output-dir:
+  output_dir:
     description: 'Output directory for files'
     required: false
     default: 'threagile/output'
+  dfe_threagile:
+    description: 'Run DfE Azure automation'
+    required: false
+    default: false
 #outputs:
 runs:
   using: 'docker'
   image: 'Dockerfile'
-  args:
-    - ${{ inputs.model-file }} 
-    - ${{ inputs.output-dir }}
-    - ${{ inputs.optional-args }}
-branding:
-  icon: 'box'  
-  color: 'blue'
