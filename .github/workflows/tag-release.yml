@@ -7,7 +7,7 @@ on:
     paths:
       - 'action.yml'
       - 'Dockerfile'
-      - 'entrypoint'
+      - 'entrypoint.sh'
 
 jobs:
   release-on-push:
