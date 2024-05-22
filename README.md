@@ -29,12 +29,12 @@ jobs:
       
       # Checkout the repo
       - name: Checkout Workspace
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
      
       # Run Threagile
       - name: Run Threagile
         id: threagile
-        uses: threagile/run-threagile-action@v1
+        uses: pritchyspritch/run-threagile-action@v2
         with:
           model-file: 'threagile.yaml'
           output-dir: 'put/files/here' # default: threagile/output
@@ -42,7 +42,7 @@ jobs:
      
       # Archive resulting files as artifacts
       - name: Archive Results
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: threagile-report
           path: threagile/output
